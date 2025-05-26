@@ -29,7 +29,7 @@ input, button{
     color: var(--color);
     background-color: var(--background-color);
 }
-input, button:not(.delete, .status){
+input:not(.notes), button:not(.delete, .status){
     padding: var(--padding);
 }
 button:hover{
@@ -67,6 +67,10 @@ button:hover{
 .status.inProgress:hover{
     color: var(--background-color);
     background-color: dodgerblue;
+}
+.notes{
+    width: min-content;
+    margin-left: var(--padding);
 }
 html, body{
     width: 100%;

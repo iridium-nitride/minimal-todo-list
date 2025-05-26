@@ -11,7 +11,7 @@ submit.addEventListener(`click`, () => {
     input.value = ``;
 
     if (task !== ``){
-        tasks.push({text: task, status: `notStarted`});
+        tasks.push({text: task, status: `notStarted`, notes: ``});
         input.value = ``;
         render();
     }
@@ -31,6 +31,15 @@ function render(){
         status.classList.add(`status`, task.status);
         status.textContent = task.status !== `inProgress` ? `not started` : `in progress`;
 
+        const notes = document.createElement(`input`);
+        notes.classList.add(`notes`);
+        notes.value = task.notes;
+
+        notes.addEventListener(`input`, () => {
+            task.notes = notes.value;
+            localStorage.setItem(`tasks`, JSON.stringify(tasks));
+        })
+
         const del = document.createElement(`button`);
         del.classList.add(`delete`);
         del.textContent = `x`;
@@ -46,6 +55,7 @@ function render(){
         })
 
         li.appendChild(status);
+        li.appendChild(notes);
         li.appendChild(del);
         list.appendChild(li);
     })
