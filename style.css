@@ -72,6 +72,12 @@ button:hover{
     width: min-content;
     margin-left: var(--padding);
 }
+#list{
+    width: 100%;
+}
+.item{
+    width: 100%;
+}
 html, body{
     width: 100%;
     height: 100%;

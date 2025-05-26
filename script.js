@@ -25,6 +25,7 @@ function render(){
 
     tasks.forEach((task, index) => {
         const li = document.createElement(`li`);
+        li.classList.add(`item`);
         li.textContent = task.text;
 
         const status = document.createElement(`button`);
