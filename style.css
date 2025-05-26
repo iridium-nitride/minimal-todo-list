@@ -1,0 +1,101 @@
+:root{
+    --padding: 1rem;
+    --font-size: 14px;
+    --font-family: monospace;
+}
+@media (min-width: 768px){
+    main{
+        width: 90%;
+    }
+}
+@media (prefers-color-scheme: light){
+    :root{
+        --color: black;
+        --background-color: white;
+    }
+}
+@media(prefers-color-scheme: dark){
+    :root{
+        --color: white;
+        --background-color: black;
+    }
+}
+*{
+    box-sizing: border-box;
+    font-family: var(--font-family);
+}
+input, button{
+    border: 1px solid var(--color);
+    color: var(--color);
+    background-color: var(--background-color);
+}
+input, button:not(.delete, .status){
+    padding: var(--padding);
+}
+button:hover{
+    color: var(--background-color);
+    background-color: var(--color);
+}
+.delete{
+    border: 1px solid red;
+    color: red;
+    width: min-content;
+    margin-left: var(--padding);
+}
+.delete:hover{
+    color: var(--background-color);
+    background-color: red;
+}
+.status{
+    margin-left: var(--padding);
+    width: min-content;
+    word-break: keep-all;
+    white-space: nowrap;
+}
+.status.notStarted{
+    border: 1px solid gray;
+    color: gray;
+}
+.status.notStarted:hover{
+    color: var(--background-color);
+    background-color: gray;
+}
+.status.inProgress{
+    border: 1px solid dodgerblue;
+    color: dodgerblue;
+}
+.status.inProgress:hover{
+    color: var(--background-color);
+    background-color: dodgerblue;
+}
+html, body{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+body{
+    color: var(--color);
+    background-color: var(--background-color);
+    font-size: var(--font-size);
+}
+#container{
+    display: flex;
+    justify-content: center;
+}
+header, footer{
+    display: flex;
+    flex-direction: row;
+}
+header *, footer *{
+    margin-right: var(--padding);
+}
+main{
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+}
+main *{
+    width: 32rem;
+    margin-bottom: var(--padding);
+}
