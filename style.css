@@ -2,6 +2,8 @@
     --padding: 1rem;
     --font-size: 14px;
     --font-family: monospace;
+    --notStarted-color: gray;
+    --inProgress-color: dodgerblue;
 }
 @media (min-width: 768px){
     main{
@@ -36,43 +38,46 @@ button:hover{
     color: var(--background-color);
     background-color: var(--color);
 }
+.status, .delete, .notes, .due{
+    margin-left: var(--padding);
+}
 .delete{
     border: 1px solid red;
     color: red;
     width: min-content;
-    margin-left: var(--padding);
 }
 .delete:hover{
     color: var(--background-color);
     background-color: red;
 }
 .status{
-    margin-left: var(--padding);
     width: min-content;
     word-break: keep-all;
     white-space: nowrap;
 }
 .status.notStarted{
-    border: 1px solid gray;
-    color: gray;
+    border: 1px solid var(--notStarted-color);
+    color: var(--notStarted-color);
 }
 .status.notStarted:hover{
     color: var(--background-color);
-    background-color: gray;
+    background-color: var(--notStarted-color);
 }
 .status.inProgress{
-    border: 1px solid dodgerblue;
-    color: dodgerblue;
+    border: 1px solid var(--inProgress-color);
+    color: var(--inProgress-color);
 }
 .status.inProgress:hover{
     color: var(--background-color);
-    background-color: dodgerblue;
+    background-color: var(--inProgress-color);
 }
 .notes{
     width: min-content;
-    margin-left: var(--padding);
 }
 #list{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     width: 100%;
 }
 .item{
@@ -92,6 +97,8 @@ body{
 #container{
     display: flex;
     justify-content: center;
+    width: 100%;
+    height: 100%;
 }
 header, footer{
     display: flex;
@@ -102,8 +109,10 @@ header *, footer *{
 }
 main{
     display: flex;
+    align-items: center;
     flex-direction: column;
     width: 60%;
+    height: 100%;
 }
 main *{
     width: 32rem;

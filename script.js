@@ -55,9 +55,10 @@ function render(){
             render();
         })
 
+        li.appendChild(del);
+        li.appendChild(document.createElement(`br`));
         li.appendChild(status);
         li.appendChild(notes);
-        li.appendChild(del);
         list.appendChild(li);
     })
 
